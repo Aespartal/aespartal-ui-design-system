@@ -1,0 +1,68 @@
+.playground-header {
+  background: var(--pg-header-bg);
+  border-bottom: 1px solid var(--pg-border);
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-title {
+  h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--pg-text);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--pg-text-muted);
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--pg-card-bg);
+  border: 1px solid var(--pg-border);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--pg-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  .theme-icon {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    background: var(--pg-hover);
+    border-color: var(--pg-primary);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,44 @@
+<section class="content-section">
+  <h2 class="section-title">Events & States</h2>
+  <p class="section-description">Manejo de eventos y estados dinámicos en los componentes</p>
+
+  <div class="demo-grid">
+    <div class="demo-card">
+      <div class="card-header">Click Event Test</div>
+      <div class="card-body">
+        <lib-atom-button [label]="'Clicks: ' + clickCount()" (clicked)="onTestClick()">
+          <span leftIcon>👆</span>
+        </lib-atom-button>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <div class="card-header">Disabled Logic</div>
+      <div class="card-body">
+        <lib-atom-button label="Disabled True" [disabled]="true"></lib-atom-button>
+
+        <lib-atom-button
+          [label]="clickCount() < 5 ? 'Click 5 times to unlock' : 'Unlocked!'"
+          [variant]="clickCount() < 5 ? 'outline' : 'solid'"
+          [disabled]="clickCount() < 5">
+          <span leftIcon>🔒</span>
+        </lib-atom-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Code Examples -->
+  <div class="code-examples">
+    <h3>💻 Ejemplos de Código</h3>
+
+    <div class="example-block">
+      <h4>Manejo de Eventos Click</h4>
+      <app-code-block [code]="codeEvents" [language]="'typescript'"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Estados Condicionales</h4>
+      <app-code-block [code]="codeConditional"></app-code-block>
+    </div>
+  </div>
+</section>

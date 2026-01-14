@@ -1,0 +1,13 @@
+<header class="playground-header">
+  <div class="header-content">
+    <div class="header-title">
+      <h1>Angular Component Playground</h1>
+      <p>Probando componentes en tiempo real con datos dinámicos</p>
+    </div>
+
+    <button class="theme-toggle" (click)="onToggleTheme()" title="Toggle Theme">
+      <span class="theme-icon">{{ isDarkMode() ? '☀️' : '🌙' }}</span>
+      <span class="theme-label">{{ isDarkMode() ? 'Light' : 'Dark' }} Mode</span>
+    </button>
+  </div>
+</header>

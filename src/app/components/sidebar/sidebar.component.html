@@ -1,0 +1,30 @@
+<aside class="playground-sidebar" [class.collapsed]="!isOpen()">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <span class="logo-icon">🧩</span>
+      @if (isOpen()) {
+        <span class="logo-text">Component Library</span>
+      }
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    @for (item of menuItems(); track item.id) {
+      <button
+        class="nav-item"
+        [class.active]="currentSection() === item.id"
+        (click)="onSectionSelect(item.id)">
+        <span class="nav-icon">{{ item.icon }}</span>
+        @if (isOpen()) {
+          <span class="nav-label">{{ item.label }}</span>
+        }
+      </button>
+    }
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="sidebar-toggle" (click)="onToggle()" title="Toggle Sidebar">
+      <span>{{ isOpen() ? '◀' : '▶' }}</span>
+    </button>
+  </div>
+</aside>

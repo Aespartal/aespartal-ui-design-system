@@ -1,0 +1,39 @@
+<section class="content-section">
+  <h2 class="section-title">Badge Component</h2>
+  <p class="section-description">Componente de badge para mostrar estados, notificaciones y etiquetas</p>
+
+  <div class="demo-card full-width">
+    <div class="card-body badge-showcase">
+      @for (badge of badges; track $index) {
+        <lib-atom-badge [variant]="badge.variant">
+          {{ badge.label }}
+        </lib-atom-badge>
+      }
+    </div>
+  </div>
+
+  <!-- Code Examples -->
+  <div class="code-examples">
+    <h3>💻 Ejemplos de Código</h3>
+
+    <div class="example-block">
+      <h4>Uso Básico</h4>
+      <app-code-block [code]="codeBasic"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Variantes de Estado</h4>
+      <app-code-block [code]="codeVariants"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Uso Dinámico</h4>
+      <app-code-block [code]="codeDynamic" [language]="'typescript'"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Con Contador</h4>
+      <app-code-block [code]="codeCounter"></app-code-block>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+.install-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.install-step {
+  background: var(--pg-card-bg);
+  border: 1px solid var(--pg-border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--pg-text);
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+    color: var(--pg-text-muted);
+    line-height: 1.6;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+
+  li {
+    padding: 0.75rem 1rem;
+    background: var(--pg-hover);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    color: var(--pg-text);
+
+    strong {
+      color: var(--pg-primary);
+      margin-right: 0.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

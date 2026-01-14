@@ -1,0 +1,38 @@
+<section class="content-section">
+  <h2 class="section-title">Dynamic Theming</h2>
+  <p class="section-description">Personaliza los colores de los componentes usando CSS custom properties</p>
+
+  <div class="demo-grid">
+    @for (theme of themes; track theme.name) {
+      <div class="demo-card">
+        <div class="card-header">{{ theme.name }} Theme</div>
+
+        <div class="card-body"
+             [style.--aes-primary-color]="theme.primary"
+             [style.--aes-primary-hover]="theme.hover">
+
+          <lib-atom-button [label]="theme.name">
+            <span leftIcon>{{ theme.icon }}</span>
+          </lib-atom-button>
+
+          <lib-atom-button label="Outline" variant="outline"></lib-atom-button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Code Examples -->
+  <div class="code-examples">
+    <h3>💻 Ejemplos de Código</h3>
+
+    <div class="example-block">
+      <h4>Theming con Angular Bindings</h4>
+      <app-code-block [code]="codeAngularBindings"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Theming Global con CSS</h4>
+      <app-code-block [code]="codeGlobalCSS" [language]="'css'"></app-code-block>
+    </div>
+  </div>
+</section>

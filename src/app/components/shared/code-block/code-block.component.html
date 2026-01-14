@@ -1,0 +1,7 @@
+<div class="code-block">
+  <button class="copy-button" (click)="copyToClipboard()" [class.copied]="copied()">
+    <span class="copy-icon">{{ copied() ? '✓' : '📋' }}</span>
+    <span class="copy-text">{{ copied() ? 'Copied!' : 'Copy' }}</span>
+  </button>
+  <pre><code>{{ code() }}</code></pre>
+</div>

@@ -1,0 +1,49 @@
+<section class="content-section">
+  <h2 class="section-title">Button Component</h2>
+  <p class="section-description">Componente de botón con múltiples variantes, tamaños y estados</p>
+
+  <div class="demo-grid">
+    @for (size of sizes; track size) {
+      <div class="demo-card">
+        <div class="card-header">Size: {{ size | uppercase }}</div>
+        <div class="card-body">
+          <lib-atom-button [label]="'Button ' + size" [size]="size">
+          </lib-atom-button>
+
+          <lib-atom-button label="Outline" variant="outline" [size]="size">
+          </lib-atom-button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Code Examples -->
+  <div class="code-examples">
+    <h3>💻 Ejemplos de Código</h3>
+
+    <div class="example-block">
+      <h4>Uso Básico</h4>
+      <app-code-block [code]="codeBasic"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Con Tamaños</h4>
+      <app-code-block [code]="codeSizes"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Con Variantes</h4>
+      <app-code-block [code]="codeVariants"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Con Icono y Eventos</h4>
+      <app-code-block [code]="codeIcon"></app-code-block>
+    </div>
+
+    <div class="example-block">
+      <h4>Estado Deshabilitado</h4>
+      <app-code-block [code]="codeDisabled"></app-code-block>
+    </div>
+  </div>
+</section>
