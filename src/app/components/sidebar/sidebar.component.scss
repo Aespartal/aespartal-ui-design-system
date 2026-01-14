@@ -1,3 +1,8 @@
+:host {
+  display: flex;
+  flex-shrink: 0;
+}
+
 .playground-sidebar {
   width: 260px;
   background: var(--pg-sidebar-bg);
@@ -6,6 +11,7 @@
   flex-direction: column;
   transition: width 0.3s ease, background-color 0.3s ease;
   flex-shrink: 0;
+  flex: 1;
 
   &.collapsed {
     width: 70px;
