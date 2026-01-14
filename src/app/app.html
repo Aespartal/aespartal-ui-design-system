@@ -1,6 +1,13 @@
 <div class="playground-container" [class.sidebar-collapsed]="!isSidebarOpen()">
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"
+       [class.visible]="isMobileMenuOpen()"
+       (click)="closeMobileMenu()">
+  </div>
+
   <!-- Sidebar Component -->
   <app-sidebar
+    [class.mobile-open]="isMobileMenuOpen()"
     [isOpen]="isSidebarOpen()"
     [currentSection]="currentSection()"
     [menuItems]="menuItems"
@@ -13,7 +20,8 @@
     <!-- Header Component -->
     <app-header
       [isDarkMode]="isDarkMode()"
-      (themeToggled)="toggleTheme()">
+      (themeToggled)="toggleTheme()"
+      (menuToggled)="toggleSidebar()">
     </app-header>
 
     <!-- Content Area -->

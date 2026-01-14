@@ -10,8 +10,13 @@ import { Component, input, output } from '@angular/core';
 export class HeaderComponent {
   isDarkMode = input<boolean>(false);
   themeToggled = output<void>();
+  menuToggled = output<void>();
 
   onToggleTheme() {
     this.themeToggled.emit();
+  }
+
+  onMenuToggle() {
+    this.menuToggled.emit();
   }
 }

@@ -97,6 +97,7 @@
 @media (max-width: 768px) {
   .copy-button {
     opacity: 1;
+    padding: 0.5rem;
 
     .copy-text {
       display: none;
@@ -104,6 +105,27 @@
   }
 
   .code-block pre code {
+    padding: 0.875rem 1rem;
     padding-right: 3.5rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-block pre code {
+    padding: 0.75rem;
+    padding-right: 3rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .copy-button {
+    padding: 0.375rem;
+    top: 0.375rem;
+    right: 0.375rem;
+
+    .copy-icon {
+      font-size: 0.875rem;
+    }
   }
 }

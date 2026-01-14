@@ -31,6 +31,9 @@ export class App {
   isSidebarOpen = signal(true);
   currentSection = signal<string>('installation');
 
+  // Control de mobile
+  isMobileMenuOpen = signal(false);
+
   // Estado para eventos
   clickCount = 0;
 
@@ -49,11 +52,27 @@ export class App {
   }
 
   toggleSidebar() {
-    this.isSidebarOpen.update((v) => !v);
+    if (this.isMobile()) {
+      this.isMobileMenuOpen.update(v => !v);
+    } else {
+      this.isSidebarOpen.update((v) => !v);
+    }
   }
 
   selectSection(sectionId: string) {
     this.currentSection.set(sectionId);
+    // Cerrar menú móvil al seleccionar una sección
+    if (this.isMobile()) {
+      this.isMobileMenuOpen.set(false);
+    }
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen.set(false);
+  }
+
+  private isMobile(): boolean {
+    return window.innerWidth <= 768;
   }
 
   handleTestClick() {
